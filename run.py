@@ -33,8 +33,30 @@ print_board(board)
 """
 This code allows the player to take turns guessing the location of the ship.
 """
-guess_row = int(input("guess row (0-4):"))
-guess_col = int(input("guess col (0-9):"))
+"""
+This code allows the player to take turns guessing the location of the ship. It includes input validation to ensure that the player enters valid row and column numbers. If the player guesses correctly, they win the game. If they guess incorrectly, the board is updated to show the miss with an "X".
+"""
+# Get validated player guess for row
+while True:
+    try:
+        guess_row = int(input("Guess row (0-4): "))
+        if 0 <= guess_row <= 4:
+            break
+        else:
+            print("Row must be between 0 and 4!")
+    except ValueError:
+        print("Please enter a valid number!")
+
+# Get validated player guess for column
+while True:
+    try:
+        guess_col = int(input("Guess col (0-9): "))
+        if 0 <= guess_col <= 9:
+            break
+        else:
+            print("Column must be between 0 and 9!")
+    except ValueError:
+        print("Please enter a valid number!")
 
 """
 This if else statement checks whether the plater hits the ship with their guess
@@ -50,4 +72,3 @@ This if statement marks misses on the board.
 if guess_row != ship_row or guess_col != ship_col:
     board[guess_row][guess_col] = "X"
 print_board(board)
-
