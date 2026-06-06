@@ -30,45 +30,47 @@ This code shows the board to the player
 print("Let's play Battleships!")
 print_board(board)
 
+print("\nTry to sink my battleship!")
+
+""""
+This is the main game loop. It continues until the player sinks the ship.
 """
-This code allows the player to take turns guessing the location of the ship.
-"""
-"""
-This code allows the player to take turns guessing the location of the ship. It includes input validation to ensure that the player enters valid row and column numbers. If the player guesses correctly, they win the game. If they guess incorrectly, the board is updated to show the miss with an "X".
-"""
-# Get validated player guess for row
 while True:
-    try:
-        guess_row = int(input("Guess row (0-4): "))
-        if 0 <= guess_row <= 4:
-            break
-        else:
-            print("Row must be between 0 and 4!")
-    except ValueError:
-        print("Please enter a valid number!")
+    # Get validated row guess
+    while True:
+        try:
+            guess_row = int(input("\nGuess row (0-4): "))
+            if 0 <= guess_row <= 4:
+                break
+            else:
+                print("Row must be between 0 and 4!")
+        except ValueError:
+            print("Please enter a valid number!")
 
-# Get validated player guess for column
-while True:
-    try:
-        guess_col = int(input("Guess col (0-9): "))
-        if 0 <= guess_col <= 9:
-            break
-        else:
-            print("Column must be between 0 and 9!")
-    except ValueError:
-        print("Please enter a valid number!")
+    # Get validated column guess
+    while True:
+        try:
+            guess_col = int(input("Guess col (0-9): "))
+            if 0 <= guess_col <= 9:
+                break
+            else:
+                print("Column must be between 0 and 9!")
+        except ValueError:
+            print("Please enter a valid number!")
 
-"""
-This if else statement checks whether the plater hits the ship with their guess
-"""
-if guess_row == ship_row and guess_col == ship_col:
-    print("Congratulations! You sank my battleship!")
-else:
-    print("You missed my battleship!")
+    # Check if the player hit the ship
+    if guess_row == ship_row and guess_col == ship_col:
+        print("\n🎉 Congratulations! You sank my battleship!")
+        board[guess_row][guess_col] = "S"   # Show the ship
+        break                                   # Stop the game
 
-"""
-This if statement marks misses on the board.
-"""
-if guess_row != ship_row or guess_col != ship_col:
-    board[guess_row][guess_col] = "X"
-print_board(board)
+    else:
+        # Miss
+        print("You missed my battleship!")
+        board[guess_row][guess_col] = "X"     # Mark the miss
+
+    # Show updated board after every miss
+    print_board(board)
+
+# Show final board when game ends
+print("\nFinal board:")
