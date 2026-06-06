@@ -1,3 +1,5 @@
+import random
+
 """
 This is the requirements file for the Battleships game. It lists the dependencies needed to run the game.
 """
