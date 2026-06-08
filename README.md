@@ -65,6 +65,7 @@ This project was created as a learning exercise to strengthen understanding of P
 5. Board updates after each guess
 
 ![Missed ship example](images/missed%20ship%20example.png)
+
 6. Repeat until ship is found
 7. Game ends and final board is shown
 
@@ -122,8 +123,6 @@ The game continues until the player successfully finds the battleship.
 
 ---
 
-
-
 ## TESTING
 
 ### Manual Testing
@@ -180,6 +179,7 @@ The Python code was validated using the CI Python Linter to ensure PEP8 complian
 ### Unfixed Bugs
 
 - No known unfixed bugs at time of submission.
+
 ---
 
 ## TECHNOLOGIES USED
@@ -190,6 +190,7 @@ The Python code was validated using the CI Python Linter to ensure PEP8 complian
 - CodeAcademy
 - Youtube
 - ChatGPT
+
 ---
 
 ## FUTURE IMPROVEMENTS
@@ -217,12 +218,39 @@ Deployment steps are as follows, after account setup:
 
 Heroku needs some additional files in order to deploy properly.
 
-
 ![Deployment screenshot](images/deployed%20in%20heroku.png)
+
+---
+
+## CLONING THE REPOSITORY
+
+To clone this project locally:
+
+1. Go to the repository:  
+https://www.github.com/CMQ1996/pp3battleships
+
+2. Click the **Code** button above the files.
+
+3. Copy the repository URL.
+
+4. In your terminal, run:
+
+```bash
+git clone https://www.github.com/CMQ1996/pp3battleships.git
+```
+
+## FORKING THE REPOSITORY
+
+To fork this project:
+
+1. Go to the repository: https://www.github.com/CMQ1996/pp3battleships
+2. Click the **Fork** button in the top-right corner.
+3. A copy of the repository will be created in your own GitHub account.
 
 ---
 
 ## FINAL NOTE
 
-This project demonstrates fundamental Python programming concepts through an interactive Battleships game built in a command-line environment. I based this project off Codeacademies pracitice Battleships game, however I customised the code to my own design. 
-Codeacademy video link: https://www.youtube.com/watch?v=7Ki_2gr0rsE&t=935s
+This project demonstrates fundamental Python programming concepts through an interactive Battleships game built in a command-line environment. I based this project off Codecademy’s practice Battleships game, however I customised the code to my own design.
+
+Codecademy video link: https://www.youtube.com/watch?v=7Ki_2gr0rsE&t=935s
