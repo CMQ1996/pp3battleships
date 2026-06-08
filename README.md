@@ -224,5 +224,5 @@ Heroku needs some additional files in order to deploy properly.
 
 ## FINAL NOTE
 
-This project demonstrates fundamental Python programming concepts through an interactive Battleships game built in a command-line environment. I based this project off code academies pracitice Battleships game, however I customised the code to my own design. 
+This project demonstrates fundamental Python programming concepts through an interactive Battleships game built in a command-line environment. I based this project off Codeacademies pracitice Battleships game, however I customised the code to my own design. 
 Codeacademy video link: https://www.youtube.com/watch?v=7Ki_2gr0rsE&t=935s
