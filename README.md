@@ -5,163 +5,207 @@ Developer: Cormac McQuillan ([CMQ1996](https://www.github.com/CMQ1996))
 [![GitHub commit activity](https://img.shields.io/github/commit-activity/t/CMQ1996/pp3battleships)](https://www.github.com/CMQ1996/pp3battleships/commits/main)
 [![GitHub last commit](https://img.shields.io/github/last-commit/CMQ1996/pp3battleships)](https://www.github.com/CMQ1996/pp3battleships/commits/main)
 [![GitHub repo size](https://img.shields.io/github/repo-size/CMQ1996/pp3battleships)](https://www.github.com/CMQ1996/pp3battleships)
-[![badge](https://img.shields.io/badge/deployment-Heroku-purple)](https://pp3battleships-704cde5f0e84.herokuapp.com)
+[![Deployment](https://img.shields.io/badge/deployment-Heroku-purple)](https://pp3battleships-704cde5f0e84.herokuapp.com)
 
 ---
 
-## ⚠️ PROJECT INTRODUCTION AND RATIONALE ⚠️
+## ⚠️ Project Introduction and Rationale
 
-This project is a simple **terminal-based Battleships game written in Python**. The purpose of the game is to demonstrate core programming concepts such as lists, loops, functions, random number generation, and input validation.
+This project is a **terminal-based Battleships game written in Python**. It demonstrates key programming concepts such as lists, loops, functions, random number generation, and input validation.
 
-The game generates a 5x10 grid and randomly places a single hidden battleship on the board. The player must attempt to locate and sink the battleship by entering row and column guesses. After each guess, the game provides feedback on whether the player has hit or missed the target and updates the board accordingly.
+The game generates a 5x10 grid and randomly places a single hidden battleship. The player must guess its location by entering row and column coordinates. After each guess, the game provides feedback and updates the board.
 
-This project was created as a learning exercise to strengthen my understanding of Python logic and control flow, particularly around loops, conditionals, and user input handling. The Battleships theme was chosen because it provides a clear, interactive, and engaging way to apply these fundamental programming concepts.
-
----
-
-## 🛑 README NOTES 🛑
-
-Do not add a **Table of Contents** to Markdown files. GitHub generates this automatically.
-
-Store project documentation such as wireframes, testing, and screenshots in a `/documentation` folder rather than `/assets` or `/static`.
+This project was created as a learning exercise to strengthen understanding of Python logic, control flow, and user input handling.
 
 ---
 
-## UX
+## UX (User Experience)
 
-### The 5 Planes of UX
-
-#### 1. Strategy
+### 1. Strategy
 
 **Purpose**
+- Create an interactive command-line game where the user finds a hidden battleship.
+- Demonstrate Python fundamentals in a practical project.
 
-* Provide an interactive command-line game where users attempt to find and sink a hidden battleship.
-* Demonstrate core Python programming concepts through gameplay.
+**User Needs**
+- Simple and intuitive gameplay
+- Clear feedback after each guess
+- A complete game loop until the ship is found
 
-**Primary User Needs**
-
-* A simple and easy-to-understand game interface.
-* Clear feedback on guesses (hit or miss).
-* Continuous gameplay until the ship is found.
-
-**Business Goals**
-
-* Showcase Python development skills.
-* Demonstrate understanding of loops, functions, and input validation.
-* Provide an engaging beginner-level game experience.
+**Project Goals**
+- Demonstrate Python programming skills
+- Show understanding of loops, functions, and validation
+- Create a beginner-friendly interactive game
 
 ---
 
-#### 2. Scope
+### 2. Scope
 
 **Features**
-
-* 5x10 grid-based game board
-* Random placement of a single battleship
-* User input for row and column guesses
-* Input validation to prevent invalid entries
-* Hit and miss feedback system
-* Board updates after each guess
-* Win condition when the battleship is found
+- 5x10 grid-based board
+- Random battleship placement
+- Row and column user input
+- Input validation
+- Hit and miss feedback
+- Board updates after each guess
+- Win condition when ship is found
 
 ---
 
-#### 3. Structure
-
-**Information Architecture**
-
-* The game runs in a single linear flow within the terminal.
+### 3. Structure
 
 **User Flow**
-
 1. Game starts and board is displayed
+
+![Initial board](images/game%20start.png)
+
 2. User enters row guess
 3. User enters column guess
 4. System checks result
-5. Board updates with hit or miss
+5. Board updates after each guess
+
+![Missed ship example](images/missed%20ship%20example.png)
 6. Repeat until ship is found
-7. Game ends and final board is displayed
+7. Game ends and final board is shown
+
+![Win screen](images/victory%20image.png)
 
 ---
 
-#### 4. Skeleton
+### 4. Skeleton
 
 **Layout**
+- Terminal-based grid (5 rows × 10 columns)
+- Numeric input prompts for row and column guesses
 
-* Terminal-based grid display (5 rows x 10 columns)
-* Numeric input prompts for row and column guesses
+![Input example](images/game%20start.png)
 
 ---
 
-#### 5. Surface
+### 5. Surface
 
-**Visual Design Elements**
-
-* Simple text-based grid interface
-* Symbols used:
-
-  * `0` = unexplored cell
-  * `X` = miss
-  * `S` = ship (revealed on win)
+**Visual Design**
+- Text-based grid interface
+- Symbols:
+  - `0` = unexplored cell
+  - `X` = miss
+  - `S` = ship (revealed on win)
 
 ---
 
 ## GAME FEATURES
 
 ### Game Board
+A 5x10 grid created using nested lists in Python.
 
-A 5x10 grid is generated using nested lists.
-
-### Random Ship Placement
-
-A single battleship is randomly placed using Python’s `random` module.
-
-### Input Validation
-
-User input is validated to ensure:
-
-* Row is between 0–4
-* Column is between 0–9
-* Only valid integers are accepted
-
-### Gameplay Loop
-
-The game continues until the player correctly guesses the ship location.
+![Gameplay board](images/game%20start.png)
 
 ---
+
+### Random Ship Placement
+A single battleship is randomly placed using Python’s `random` module.
+
+---
+
+### Input Validation
+Ensures:
+- Row input is between 0–4
+- Column input is between 0–9
+- Only valid integers are accepted
+
+![Validation error](images/valid%20input%20pass%200.png)
+
+---
+
+### Gameplay Loop
+The game continues until the player successfully finds the battleship.
+
+---
+
+
 
 ## TESTING
 
 ### Manual Testing
 
-* Tested valid and invalid row inputs
-* Tested valid and invalid column inputs
-* Confirmed game ends when ship is found
-* Verified board updates correctly after each guess
+The game was manually tested to ensure all core functionality works as expected, including valid gameplay, invalid input handling, and win conditions.
+
+| Test Case | Input | Expected Result | Actual Result |
+|-----------|------|----------------|---------------|
+| Valid row input | 2 | Accepted | Pass |
+| Invalid row input | "a" | Error message shown | Pass |
+| Valid column input | 5 | Accepted | Pass |
+| Out of range column | 99 | Error message shown | Pass |
+| Correct guess | Matching ship coordinates | Win message displayed | Pass |
+
+### Manual Testing Evidence
+
+The following screenshots demonstrate successful manual testing of key features:
+
+- Valid input accepted  
+![Valid input](images/valid%20col%20input%205.png)
+
+- Invalid row input handling  
+![Invalid row](images/invalid%20row%20input%20a.png)
+
+- Invalid column input handling  
+![Invalid column](images/valid%20col%20input%205.png)
+
+- Game win condition  
+![Win screen](images/victory%20image.png)
 
 ---
 
+## CODE VALIDATION (PEP8 CI)
+
+The Python code was validated using the CI Python Linter to ensure PEP8 compliance.
+
+- All Python files passed validation with no major errors.
+- Minor style warnings were reviewed and corrected where necessary.
+
+| File | Validation Tool | Result | Screenshot |
+|------|----------------|--------|------------|
+| run.py | PEP8 CI Linter | Pass | ![PEP8 validation](images/Pep8%20validator..png) |
+
+---
+
+## BUGS
+
+### Fixed Bugs
+
+- Fixed issue where non-integer input caused the program to crash by implementing `try/except` validation.
+- Fixed out-of-range input allowing invalid board positions.
+- Fixed repeated input crashes during gameplay loop.
+
+### Unfixed Bugs
+
+- No known unfixed bugs at time of submission.
+---
+s
 ## TECHNOLOGIES USED
 
-* Python 3
-* Random module
+- Python 3
+- Random module
 
 ---
 
 ## FUTURE IMPROVEMENTS
 
-* Add multiple battleships
-* Limit number of guesses
-* Add difficulty levels
-* Improve board display with coordinates
-* Prevent repeated guesses
+- Add multiple battleships
+- Limit number of guesses
+- Add difficulty levels
+- Improve board display with coordinates
+- Prevent repeated guesses
 
 ---
 
 ## DEPLOYMENT
 
 This project is deployed using Heroku:
+
 https://pp3battleships-704cde5f0e84.herokuapp.com
+
+![Deployment screenshot](images/deployed%20in%20heroku.png)
 
 ---
 
