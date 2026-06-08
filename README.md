@@ -9,7 +9,7 @@ Developer: Cormac McQuillan ([CMQ1996](https://www.github.com/CMQ1996))
 
 ---
 
-## ⚠️ Project Introduction and Rationale
+##  Project Introduction and Rationale
 
 This project is a **terminal-based Battleships game written in Python**. It demonstrates key programming concepts such as lists, loops, functions, random number generation, and input validation.
 
@@ -181,7 +181,7 @@ The Python code was validated using the CI Python Linter to ensure PEP8 complian
 
 - No known unfixed bugs at time of submission.
 ---
-s
+
 ## TECHNOLOGIES USED
 
 - Python 3
@@ -204,9 +204,19 @@ s
 
 ## DEPLOYMENT
 
-This project is deployed using Heroku:
+This project uses [Heroku](https://www.heroku.com), a platform as a service (PaaS) that enables developers to build, run, and operate applications entirely in the cloud.
 
-https://pp3battleships-704cde5f0e84.herokuapp.com
+Deployment steps are as follows, after account setup:
+
+- Select **New** in the top-right corner of your Heroku Dashboard, and select **Create new app** from the dropdown menu.
+- Your app name must be unique, and then choose a region closest to you (EU or USA), then finally, click **Create App**.
+- From the new app **Settings**, click **Reveal Config Vars**, and set the value of **KEY** to `PORT`, and the **VALUE** to `8000` then select **ADD**.
+- If using any confidential credentials, such as **CREDS.JSON**, then these should be pasted in the Config Variables as well.
+- Further down, to support dependencies, select **Add Buildpack**.
+- The order of the buildpacks is important; select `Python` first, then `Node.js` second. (if they are not in this order, you can drag them to rearrange them)
+
+Heroku needs some additional files in order to deploy properly.
+
 
 ![Deployment screenshot](images/deployed%20in%20heroku.png)
 
