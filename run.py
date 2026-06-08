@@ -49,7 +49,7 @@ print_board(board)
 print("\nTry to sink my battleship!")
 
 while True:
-    # Get validated row guess
+    """ Get validated row guess """
     while True:
         try:
             guess_row = int(input("\nGuess row (0-4): "))
@@ -59,7 +59,7 @@ while True:
         except ValueError:
             print("Please enter a valid number!")
 
-    # Get validated column guess
+    """ Get validated column guess """
     while True:
         try:
             guess_col = int(input("Guess col (0-9): "))
@@ -69,7 +69,7 @@ while True:
         except ValueError:
             print("Please enter a valid number!")
 
-    # Check hit or miss
+    """ Check hit or miss """
     if guess_row == ship_row and guess_col == ship_col:
         print("\n🎉 Congratulations! You sank my battleship!")
         board[guess_row][guess_col] = "S"
